@@ -10,12 +10,13 @@ import android.widget.ListView;
 public class MainActivity extends AppCompatActivity {
 
     private ListView mLiatViewNotes;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mLiatViewNotes = (ListView) findViewById(R.id.main_listview_notes);
+        mLiatViewNotes =  findViewById(R.id.main_listview_notes);
     }
 
     @Override
