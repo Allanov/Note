@@ -10,6 +10,14 @@
         android:id="@+id/action_note_save"
         android:icon="@drawable/ic_save"
         android:orderInCategory="0"
-        app:showAsAction="always" />
+        app:showAsAction="always"/>
+
+    <item
+        android:enabled="true"
+        android:title="delete"
+        android:id="@+id/action_note_delete"
+        android:icon="@drawable/ic_delete"
+        android:orderInCategory="0"
+        app:showAsAction="always"/>
 
 </menu>

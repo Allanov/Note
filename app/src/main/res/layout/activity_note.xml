@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".NoteActivity">
+    tools:context=".NoteActivity"
+    android:background="#F0E9C3">
 
     <EditText
         android:id="@+id/note_et_title"

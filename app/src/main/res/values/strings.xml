@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Note</string>
+    <string name="toast_saved_message">Note has been saved!</string>
+    <string name="toast_not_saved_message">Cannot save this note, please make sure that you have enough storage on your device!</string>
 </resources>

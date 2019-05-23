@@ -5,26 +5,27 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ListView mLiatViewNotes;
-
+    private ListView mListViewNotes;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        mLiatViewNotes =  findViewById(R.id.main_listview_notes);
+        mListViewNotes =  findViewById(R.id.main_listview_notes);
     }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
@@ -33,5 +34,27 @@ public class MainActivity extends AppCompatActivity {
             break;
         }
         return true;
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mListViewNotes.setAdapter(null);
+        ArrayList<Note> notes = Utilities.getSavedNotes(this);
+        if (notes == null || notes.size()==0){
+            Toast.makeText(this, "Note has no saved!", Toast.LENGTH_SHORT).show();
+            return;
+        }else {
+            NoteAdapter na = new NoteAdapter(this, R.layout.item_note, notes);
+            mListViewNotes.setAdapter(na);
+            mListViewNotes.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    String fileName = ((Note) mListViewNotes.getItemAtPosition(position)).getDateTime() + Utilities.FILE_EXTENTION;
+                    Intent viewNoteIntent = new Intent(getApplicationContext(), NoteActivity.class);
+                    viewNoteIntent.putExtra("NOTE_FILE", fileName);
+                    startActivity(viewNoteIntent);
+                }
+            });
+        }
     }
 }
