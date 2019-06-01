@@ -1,0 +1,24 @@
+<resources>
+    <!--
+    TODO: Before you run your application, you need a Google Maps API key.
+
+    To get one, follow this link, follow the directions and press "Create" at the end:
+
+    https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend&keyType=CLIENT_SIDE_ANDROID&r=75:5F:B0:8A:88:D6:32:E2:CE:87:D3:75:3C:83:E4:7D:B6:CF:F8:21%3Bcom.flaterlab.parkingapp
+
+    You can also add your credentials to an existing key, using these values:
+
+    Package name:
+    75:5F:B0:8A:88:D6:32:E2:CE:87:D3:75:3C:83:E4:7D:B6:CF:F8:21
+
+    SHA-1 certificate fingerprint:
+    75:5F:B0:8A:88:D6:32:E2:CE:87:D3:75:3C:83:E4:7D:B6:CF:F8:21
+
+    Alternatively, follow the directions here:
+    https://developers.google.com/maps/documentation/android/start#get-key
+
+    Once you have your key (it starts with "AIza"), replace the "google_maps_key"
+    string in this file.
+    -->
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyCHW9Vj1nJNvHivoqFn6iohjS6RLMUKtd8</string>
+</resources>

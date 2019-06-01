@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".screen.main.MainActivity">
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/content_main"
+        tools:layout_editor_absoluteX="48dp"
+        tools:layout_editor_absoluteY="-145dp" />
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@drawable/bg_action_bar"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="10dp">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_parking_zone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        tools:text="Alatoo," />
+
+                    <TextView
+                        android:id="@+id/tv_polygon"
+                        style="@style/AppBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="Polygon 2" />
+                </LinearLayout>
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin">
+
+                    <TextView
+                        android:id="@+id/tv_timer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="30sp"
+                        tools:text="9" />
+
+                    <ImageView
+                        android:id="@+id/iv_parking_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:contentDescription="@string/notif_status_parked"
+                        android:src="@drawable/ic_status_parked"
+                        android:visibility="gone" />
+                </FrameLayout>
+            </LinearLayout>
+
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <com.flaterlab.parkingapp.view.AnimatedRecyclerView
+        android:id="@+id/rv_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp"
+        android:layout_marginRight="56dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginLeft="8dp"
+        android:background="@color/white"
+        android:visibility="invisible"
+        android:layout_marginEnd="56dp"
+        android:layout_marginStart="8dp" />
+
+    <ImageButton
+        android:id="@+id/ibt_search"
+        style="@style/MapButton"
+        android:layout_marginTop="68dp"
+        android:background="@drawable/bg_map_button"
+        android:src="@drawable/ic_search"
+        app:layout_constraintEnd_toEndOf="@+id/include"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
+
+    <ImageButton
+        android:id="@+id/ibt_list"
+        style="@style/MapButton"
+        android:background="@drawable/bg_map_button"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/ic_list"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ibt_search" />
+
+    <CheckBox
+        android:id="@+id/chb_accuracy"
+        style="@style/MapButton"
+        android:foregroundGravity="center"
+        android:layout_marginTop="8dp"
+        android:button="@drawable/ic_accuracy_selector"
+        android:background="@drawable/bg_map_button"
+        app:layout_constraintEnd_toEndOf="@+id/include"
+        app:layout_constraintTop_toBottomOf="@+id/ibt_list" />
+
+</android.support.constraint.ConstraintLayout>
